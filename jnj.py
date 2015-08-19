@@ -11,14 +11,20 @@ print "The free cash flow is:", fcf
 print "The growth is:", growth
 print "The years of growth is:", years
 
+oldfcf=fcf
 gp=growth/100
-sum=0
+sum=float(0)
 for x in range (0, years):
-    print "Value for year: ", x, " is ", fcf
+    if x>=10:
+        gp = .05
+    sum=sum+(fcf/((1+.15)**x))
+    print "Projected FCF for year: ", x+2006, " is ", '{0:.5g}'.format(fcf)#, " PV is: ", '{0:.5g}'.format(sum)
     fcf=((fcf*(gp)))+fcf
-    sum=sum+fcf/((1+gp)**years)
 
-print "The PC sum is: ", sum
+value=sum-oldfcf+39000
+value=value/2900
+
+print "The value is: ", '{0:.8}'.format(value)
 
 
     
