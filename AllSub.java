@@ -25,7 +25,6 @@ public class AllSub{
             tmp[n]=vals[n];
             count++;
             return tmp;
-
         }
         else{
             int [] tmp = new int[n];
